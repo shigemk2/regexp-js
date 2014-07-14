@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/shigemk2/regexp-js/issues"
   },
-  "homepage": "https://github.com/shigemk2/regexp-js"
+  "homepage": "https://github.com/shigemk2/regexp-js",
+  "devDependencies": {
+    "grunt-cli": "^0.1.13"
+  }
 }
