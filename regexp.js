@@ -1,13 +1,17 @@
 var rgj = {
-  numeric: function(value, num) {
-    var re = typeof num === 'undefined' ? new RegExp("^\\d*$") : new RegExp("^\\d{"+num+"}$");
+  rules: {
+    numericRegex: '^\\d*$',
+    alphaRegex: '^\\D*$'
+  },
+  isNumeric: function(value) {
+    var re = new RegExp(rgj.rules.numericRegex);
     return value.match(re) !== null;
   },
-  word: function(value, num) {
-    var re = typeof num === 'undefined' ? new RegExp("^.*$") : new RegExp("^.{"+num+"}$");
+  isAlpha: function(value) {
+    var re = new RegExp(rgj.rules.alphaRegex);
     return value.match(re) !== null;
   },
-  url: function(value, num) {
+  isUrl: function(value) {
     return /^(http|https):\/\//.test(value);
   }
 };
