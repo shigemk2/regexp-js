@@ -1,6 +1,12 @@
 var rgj = {
   numeric: function(value, num) {
-    return 'hoge';
+    return ;
+  },
+  word: function(value, num) {
+    return ;
+  },
+  url: function(value, num) {
+    return;
   }
 };
 
