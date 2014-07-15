@@ -5,12 +5,13 @@ function Rpj() {
 Rpj.prototype = {
   rules: {
     numericRegex: '^\\d*$',
-    alphaRegex: '^\\D*$',
+    alphaRegex: '^[a-zA-Z]*$',
+    alphaExtraRegex: '^[a-zA-Z_\+\-]*$',
     urlRegex: '^(https?:\/\/)'
   },
   // check that value is numeric and check the number is the same as parameter
   chkNumeric: function(value, length) {
-    if (! this._chkType) {
+    if (! this._chkType(value)) {
       return false;
     };
 
@@ -22,7 +23,7 @@ Rpj.prototype = {
   },
   // check that value is alpha and check the number is the same as parameter
   chkAlpha: function(value, length) {
-    if (! this._chkType) {
+    if (! this._chkType(value)) {
       return false;
     };
 
@@ -34,7 +35,7 @@ Rpj.prototype = {
   },
   // check that value is alpha with _-+ and check the number is the same as parameter
   chkAlphaExtra: function(value, length) {
-    if (! this._chkType) {
+    if (! this._chkType(value)) {
       return false;
     };
 
@@ -46,7 +47,7 @@ Rpj.prototype = {
   },
   // check that value is url
   chkUrl: function(value) {
-    if (! this._chkType) {
+    if (! this._chkType(value)) {
       return false;
     };
 
