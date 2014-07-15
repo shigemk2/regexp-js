@@ -86,6 +86,18 @@ test("httpurl on chkUrl", function () {
   ok(rpj.chkUrl("http://hoge.com") === true, "http://hoge.com is valid");
 });
 
+test("httpsurl on chkAlpha", function () {
+  ok(rpj.chkAlpha("https://hoge.com") === false, "https://hoge.com is valid");
+});
+
+test("httpsurl on chkNumeric", function () {
+  ok(rpj.chkNumeric("https://hoge.com") === false, "https://hoge.com is invalid");
+});
+
+test("httpsurl on chkUrl", function () {
+  ok(rpj.chkUrl("https://hoge.com") === true, "https://hoge.com is valid");
+});
+
 test("int on chkNumeric", function () {
   ok(rpj.chkNumeric(12345) === false, "12345 is invalid");
 });
