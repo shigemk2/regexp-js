@@ -5,9 +5,8 @@ function Rpj() {
 Rpj.prototype = {
   rules: {
     numericRegex: '^\\d*$',
-    alphaRegex: '^[a-zA-Z]*$',
-    alphaExtraRegex: '^[a-zA-Z_\+\-]*$',
-    urlRegex: '^(http|https)'
+    alphaRegex: '^\\D*$',
+    urlRegex: '^(https?:\/\/)'
   },
   // check that value is numeric and check the number is the same as parameter
   chkNumeric: function(value, length) {
