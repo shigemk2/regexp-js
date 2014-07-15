@@ -13,6 +13,7 @@ Rpj.prototype = {
   rules: {
     numericRegex: '^\\d*$',
     alphaRegex: '^[a-zA-Z]*$',
+    alphaNumericRegex: '^[a-zA-Z0-9]*$',
     alphaExtraRegex: '^[a-zA-Z_\+\-]*$',
     urlRegex: '^(https?:\/\/)'
   },
@@ -50,6 +51,18 @@ Rpj.prototype = {
       return this._match(this.rules.alphaExtraRegex, value);
     } else {
       return this._match(this.rules.alphaExtraRegex, value) && value.length === length;
+    };
+  },
+  // check that value is alphaNumeric and check the number is the same as parameter
+  chkAlphaNumeric: function(value, length) {
+    if (! this._chkType(value)) {
+      return false;
+    };
+
+    if (typeof length === 'undefined') {
+      return this._match(this.rules.alphaNumericRegex, value);
+    } else {
+      return this._match(this.rules.alphaNumericRegex, value) && value.length === length;
     };
   },
   // check that value is url
