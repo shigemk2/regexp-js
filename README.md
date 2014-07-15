@@ -14,28 +14,28 @@ regexp.js is a JavaScript library that helps to use Regular Expression more easi
 ```javascript
 var Rpj = new Rpj();
 
-var test1 = "abc";
+var testalphaextra = "abc";
 console.log('---------alpha--------');
-console.log(Rpj.chkAlpha(alpha)); // true
-console.log(Rpj.chkNumeric(alpha)); // false
+console.log(Rpj.chkAlphaExtra(testalphaextra)); // true
+console.log(Rpj.chkNumeric(testalphaextra)); // false
 
-var test2 = "0123456789";
+var testnumeric = "0123456789";
 console.log('---------numeric--------');
-console.log(Rpj.chkNumeric(numeric)); // true
-console.log(Rpj.chkAlpha(numeric)); // false
+console.log(Rpj.chkNumeric(testnumeric)); // true
+console.log(Rpj.chkAlphaExtra(testnumeric)); // false
 
-var test3 = "0123456789";
+var testnumericnum = "0123456789";
 console.log('---------numericwithnum--------');
-console.log(Rpj.chkNumeric(numeric, 10)); // true
-console.log(Rpj.chkNumeric(numeric, 9)); // false
+console.log(Rpj.chkNumeric(testnumericnum, 10)); // true
+console.log(Rpj.chkNumeric(testnumericnum, 9)); // false
 
-var test4 = "http://hogehoge.com";
+var testhttp = "http://hogehoge.com";
 console.log('---------http--------');
-console.log(Rpj.chkUrl(http)); // true
-console.log(Rpj.chkAlpha(http)); // true
+console.log(Rpj.chkUrl(testhttp)); // true
+console.log(Rpj.chkAlphaExtra(testhttp)); // true
 
-var test5 = "https://hogehoge.com";
+var testhttps = "https://hogehoge.com";
 console.log('---------https--------');
-console.log(Rpj.chkUrl(https)); // true
-console.log(Rpj.chkAlpha(https)); // true
+console.log(Rpj.chkUrl(testhttps)); // true
+console.log(Rpj.chkAlphaExtra(testhttps)); // true
 ```
