@@ -6,6 +6,7 @@ module("test on regexp.js", {
   }
 });
 
+// numeric test
 test("numeric on chkNumeric", function () {
   ok(rpj.chkNumeric("1234567890") === true, "1234567890 is valid");
 });
@@ -34,6 +35,7 @@ test("numeric on chkNumeric with invalid length", function () {
   ok(rpj.chkNumeric("1234567890", 9) === false, "1234567890 is invalid");
 });
 
+// alpha test
 test("alpha on chkAlpha", function () {
   ok(rpj.chkAlpha("ABCDE") === true, "ABCDE is invalid");
 });
@@ -54,6 +56,7 @@ test("alpha on chkAlpha with invalid length", function () {
   ok(rpj.chkAlpha("ABCDE", 4) === false, "ABCDE is invalid");
 });
 
+// alphaextra test
 test("alphaextra on chkAlphaExtra", function () {
   ok(rpj.chkAlphaExtra("ABCDE+_-") === true, "ABCDE+_- is invalid");
 });
@@ -74,6 +77,7 @@ test("alphaextra on chkAlphaExtra with invalid length", function () {
   ok(rpj.chkAlphaExtra("ABCDE+_-", 7) === false, "ABCDE+_- is invalid");
 });
 
+// httpurl test
 test("httpurl on chkAlpha", function () {
   ok(rpj.chkAlpha("http://hoge.com") === false, "http://hoge.com is valid");
 });
@@ -86,6 +90,7 @@ test("httpurl on chkUrl", function () {
   ok(rpj.chkUrl("http://hoge.com") === true, "http://hoge.com is valid");
 });
 
+// httpsurl test
 test("httpsurl on chkAlpha", function () {
   ok(rpj.chkAlpha("https://hoge.com") === false, "https://hoge.com is valid");
 });
@@ -98,6 +103,7 @@ test("httpsurl on chkUrl", function () {
   ok(rpj.chkUrl("https://hoge.com") === true, "https://hoge.com is valid");
 });
 
+// int test
 test("int on chkNumeric", function () {
   ok(rpj.chkNumeric(12345) === false, "12345 is invalid");
 });
@@ -114,6 +120,7 @@ test("int on chkUrl", function () {
   ok(rpj.chkUrl(12345) === false, "12345 is invalid");
 });
 
+// array test
 test("array on chkNumeric", function () {
   ok(rpj.chkNumeric([1,2,3,4,5]) === false, "[1,2,3,4,5] is invalid");
 });
@@ -130,6 +137,7 @@ test("array on chkUrl", function () {
   ok(rpj.chkUrl([1,2,3,4,5]) === false, "[1,2,3,4,5] is invalid");
 });
 
+// JSON test
 test("JSON on chkNumeric", function () {
   ok(rpj.chkNumeric({'hoge':'fuga'}) === false, "{'hoge':'fuga'} is invalid");
 });
@@ -146,6 +154,7 @@ test("JSON on chkUrl", function () {
   ok(rpj.chkUrl({'hoge':'fuga'}) === false, "{'hoge':'fuga'} is invalid");
 });
 
+// undefined test
 test("undefined on chkNumeric", function () {
   ok(rpj.chkNumeric(undefined) === false, "undefined is invalid");
 });
@@ -162,6 +171,7 @@ test("undefined on chkUrl", function () {
   ok(rpj.chkUrl(undefined) === false, "undefined is invalid");
 });
 
+// null test
 test("null on chkNumeric", function () {
   ok(rpj.chkNumeric(null) === false, "null is invalid");
 });
