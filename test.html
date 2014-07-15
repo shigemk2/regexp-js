@@ -4,12 +4,22 @@
     <script type="text/javascript" src="./regexp.js"></script>
     <script type="text/javascript">
       var alpha = "abc";
-      console.log(rgj.isAlpha(alpha)); // true
-      console.log(rgj.isNumeric(alpha)); // false
+      var Rpj = new Rpj();
+      console.log(Rpj.start().alpha().end().match(alpha)); // true
+      console.log(Rpj.start().numeric().end().match(alpha)); // false
 
       var numeric = "0123456789";
-      console.log(rgj.isNumeric(numeric)); // true
-      console.log(rgj.isAlpha(numeric)); // false
+      console.log(Rpj.start().numeric().end().match(numeric)); // true
+      console.log(Rpj.start().alpha().end().match(numeric)); // false
+
+      var http = "http://hogehoge.com";
+      console.log(Rpj.start().url().match(http)); // true
+      console.log(Rpj.start().alpha().match(http)); // true
+
+      var https = "https://hogehoge.com";
+      console.log(Rpj.start().url().match(https)); // true
+      console.log(Rpj.start().alpha().match(https)); // true
+
     </script>
   </head>
   <body>
