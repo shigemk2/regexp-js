@@ -1,42 +1,35 @@
 function Rpj() {
-  return this.element;
+  return this;
 };
 
 Rpj.prototype = {
-  _re : '',
   rules: {
-    startRegex: '^',
-    numericRegex: '\\d*',
-    alphaRegex: '\\D*',
-    urlRegex: '(http|https)',
-    endRegex: '$'
+    numericRegex: '^\\d*$',
+    alphaRegex: '^\\D*$',
+    urlRegex: '^(http|https)'
   },
-  numeric: function() {
-    this._re += Rpj.rules.numericRegex;
-    return this;
+  // check that value is numeric and check the number is the same as parameter
+  chkNumeric: function(value, length) {
+    if (typeof length === 'undefined') {
+      return this._match(this.rules.numericRegex, value);
+    } else {
+      return this._match(this.rules.numericRegex, value) && value.length === length;
+    };
   },
-  alpha: function() {
-    this._re += Rpj.rules.alphaRegex;
-    return this;
+  // check that value is alpha and check the number is the same as parameter
+  chkAlpha: function(value, length) {
+    if (typeof length === 'undefined') {
+      return this._match(this.rules.alphaRegex, value);
+    } else {
+      return this._match(this.rules.alphaRegex, value) && value.length === length;
+    };
   },
-  url: function() {
-    this._re += Rpj.rules.urlRegex;
-    return this;
+  // check that value is url
+  chkUrl: function(value) {
+    return this._match(this.rules.urlRegex, value);
   },
-  start: function() {
-    this._re += Rpj.rules.startRegex;
-    return this;
-  },
-  end: function() {
-    this._re += Rpj.rules.endRegex;
-    return this;
-  },
-  match: function(value) {
-    var re = new RegExp(this._re);
-    this._init();
+  _match: function(reg, value) {
+    var re = new RegExp(reg);
     return value.match(re) !== null;
-  },
-  _init: function() {
-    this._re = '';
   }
 };

@@ -15,18 +15,27 @@ regexp.js is a JavaScript library that helps to use Regular Expression more easi
 var Rpj = new Rpj();
 
 var alpha = "abc";
-console.log(Rpj.start().alpha().end().match(alpha)); // true
-console.log(Rpj.start().numeric().end().match(alpha)); // false
+console.log('---------alpha--------');
+console.log(Rpj.chkAlpha(alpha)); // true
+console.log(Rpj.chkNumeric(alpha)); // false
 
 var numeric = "0123456789";
-console.log(Rpj.start().numeric().end().match(numeric)); // true
-console.log(Rpj.start().alpha().end().match(numeric)); // false
+console.log('---------numeric--------');
+console.log(Rpj.chkNumeric(numeric)); // true
+console.log(Rpj.chkAlpha(numeric)); // false
+
+var numeric = "0123456789";
+console.log('---------numericwithnum--------');
+console.log(Rpj.chkNumeric(numeric, 10)); // true
+console.log(Rpj.chkNumeric(numeric, 9)); // false
 
 var http = "http://hogehoge.com";
-console.log(Rpj.start().url().match(http)); // true
-console.log(Rpj.start().alpha().match(http)); // true
+console.log('---------http--------');
+console.log(Rpj.chkUrl(http)); // true
+console.log(Rpj.chkAlpha(http)); // true
 
 var https = "https://hogehoge.com";
-console.log(Rpj.start().url().match(https)); // true
-console.log(Rpj.start().alpha().match(https)); // true
+console.log('---------https--------');
+console.log(Rpj.chkUrl(https)); // true
+console.log(Rpj.chkAlpha(https)); // true
 ```
