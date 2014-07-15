@@ -1,3 +1,5 @@
+var saveLicense = require('uglify-save-license');
+
 module.exports = function (grunt) {
     'use strict';
     // Project configuration
@@ -6,7 +8,8 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
             options: {
-                banner: '<%= banner %>'
+                banner: '<%= banner %>',
+                preserveComments: saveLicense
             },
             dist: {
                 src: 'regexp.js',
