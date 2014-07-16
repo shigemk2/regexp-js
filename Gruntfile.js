@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         },
         watch: {
             gruntfile: {
-                files: ['<%= uglify.dist.src %>','test/*'],
+                files: ['Gruntfile.js', '<%= uglify.dist.src %>','test/*'],
                 tasks: ['uglify', 'jshint', 'qunit']
             }
         }
