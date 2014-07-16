@@ -242,3 +242,72 @@ test("undefined on chkAlphaNumeric", function () {
 test("null on chkAlphaNumeric", function () {
   ok(rpj.chkAlphaNumeric(null) === false, "null is invalid");
 });
+
+// chkAlphaNumericExtra
+test("numeric on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra("1234567890") === true, "1234567890 is valid");
+});
+
+test("numeric on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra("1234567890") === true, "1234567890 is valid");
+});
+
+test("alpha on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra("ABCDE") === true, "ABCDE is valid");
+});
+
+test("alphaextra on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra("ABCDE+_-") === true, "ABCDE+_- is valid");
+});
+
+test("alphanumericextra on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra("ABCDE0123+_-") === true, "ABCDE0123+_- is valid");
+});
+
+test("alphanumericextra on chkAlphaNumericExtra with valid length", function () {
+  ok(rpj.chkAlphaNumericExtra("ABCDE0123+_-", 12) === true, "ABCDE0123+_- is valid");
+});
+
+test("alphanumericextra on chkAlphaNumericExtra with invalid length", function () {
+  ok(rpj.chkAlphaNumericExtra("ABCDE0123+_-", 13) === false, "ABCDE0123+_- is invalid");
+});
+
+test("alphanumeric on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra("ABCDE123") === true, "ABCDE123 is valid");
+});
+
+test("alphanumeric on chkAlphaNumericExtra with valid length", function () {
+  ok(rpj.chkAlphaNumericExtra("ABCDE123", 8) === true, "ABCDE123 is valid");
+});
+
+test("alphanumeric on chkAlphaNumericExtra with invalid length", function () {
+  ok(rpj.chkAlphaNumericExtra("ABCDE123", 7) === false, "ABCDE123 is invalid");
+});
+
+test("httpurl on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra("http://hoge.com") === false, "http://hoge.com is invalid");
+});
+
+test("httpsurl on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra("https://hoge.com") === false, "https://hoge.com is invalid");
+});
+
+test("int on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra(12345) === false, "12345 is invalid");
+});
+
+test("array on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra([1,2,3,4,5]) === false, "[1,2,3,4,5] is invalid");
+});
+
+test("JSON on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra({'hoge':'fuga'}) === false, "{'hoge':'fuga'} is invalid");
+});
+
+test("undefined on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra(undefined) === false, "undefined is invalid");
+});
+
+test("null on chkAlphaNumericExtra", function () {
+  ok(rpj.chkAlphaNumericExtra(null) === false, "null is invalid");
+});
