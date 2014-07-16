@@ -23,6 +23,7 @@
     "qunitjs": "^1.14.0",
     "grunt-contrib-qunit": "^0.5.2",
     "blanket": "^1.1.6",
-    "uglify-save-license": "^0.4.1"
+    "uglify-save-license": "^0.4.1",
+    "grunt-contrib-jshint": "~0.10.0"
   }
 }
