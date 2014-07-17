@@ -5,32 +5,44 @@
     <script type="text/javascript">
       var Rpj = new Rpj();
 
-      var testalphaextra = "abc";
-      console.log('---------alpha--------');
-      console.log(Rpj.chkAlphaExtra(testalphaextra)); // true
-      console.log(Rpj.chkNumeric(testalphaextra)); // false
+      console.log('---------onlyalpha--------');
+      console.log(Rpj.chkAlpha("abc"));      // true
+      console.log(Rpj.chkAlphaExtra("abc")); // true
+      console.log(Rpj.chkNumeric("abc"));    // false
 
-      var testnumeric = "0123456789";
+      console.log('---------alphaextra--------');
+      console.log(Rpj.chkAlpha("abc_+-"));      // false
+      console.log(Rpj.chkAlphaExtra("abc_+-")); // true
+      console.log(Rpj.chkNumeric("abc_+-"));    // false
+
+      console.log('---------alphanumeric--------');
+      console.log(Rpj.chkAlpha("abc0123"));      // false
+      console.log(Rpj.chkAlphaExtra("abc0123")); // true
+      console.log(Rpj.chkNumeric("abc0123"));    // false
+
+      console.log('---------alphanumericextra--------');
+      console.log(Rpj.chkAlpha("abc0123+-_"));             // false
+      console.log(Rpj.chkAlphaExtra("abc0123+-_"));        // false
+      console.log(Rpj.chkAlphaNumericExtra("abc0123+-_")); // true
+      console.log(Rpj.chkNumeric("abc0123+-_"));           // false
+
       console.log('---------numeric--------');
-      console.log(Rpj.chkNumeric(testnumeric)); // true
-      console.log(Rpj.chkAlphaExtra(testnumeric)); // false
+      console.log(Rpj.chkNumeric("0123456789"));    // true
+      console.log(Rpj.chkAlphaExtra("0123456789")); // false
 
-      var testnumericnum = "0123456789";
       console.log('---------numericwithnum--------');
-      console.log(Rpj.chkNumeric(testnumericnum, 10)); // true
-      console.log(Rpj.chkNumeric(testnumericnum, 9)); // false
+      console.log(Rpj.chkNumeric("0123456789", 10)); // true
+      console.log(Rpj.chkNumeric("0123456789", 9));  // false
 
-      var testhttp = "http://hogehoge.com";
       console.log('---------http--------');
-      console.log(Rpj.chkUrl(testhttp)); // true
-      console.log(Rpj.chkAlpha(testhttp)); // false
-      console.log(Rpj.chkAlphaExtra(testhttp)); // false
+      console.log(Rpj.chkUrl("http://hogehoge.com"));        // true
+      console.log(Rpj.chkAlpha("http://hogehoge.com"));      // false
+      console.log(Rpj.chkAlphaExtra("http://hogehoge.com")); // false
 
-      var testhttps = "https://hogehoge.com";
       console.log('---------https--------');
-      console.log(Rpj.chkUrl(testhttps)); // true
-      console.log(Rpj.chkAlpha(testhttps)); // false
-      console.log(Rpj.chkAlphaExtra(testhttps)); // false
+      console.log(Rpj.chkUrl("https://hogehoge.com"));        // true
+      console.log(Rpj.chkAlpha("https://hogehoge.com"));      // false
+      console.log(Rpj.chkAlphaExtra("https://hogehoge.com")); // false
 
     </script>
   </head>
