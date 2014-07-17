@@ -1,6 +1,8 @@
 regexp-js
 =========
 
+[![Build Status](https://travis-ci.org/shigemk2/regexp-js.svg?branch=master)](https://travis-ci.org/shigemk2/regexp-js)
+
 ## Easier JavaScript Regular Expressions
 
 regexp.js is a JavaScript library that helps to use Regular Expression more easily.
