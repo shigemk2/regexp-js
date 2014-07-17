@@ -23,12 +23,14 @@
       var testhttp = "http://hogehoge.com";
       console.log('---------http--------');
       console.log(Rpj.chkUrl(testhttp)); // true
-      console.log(Rpj.chkAlphaExtra(testhttp)); // true
+      console.log(Rpj.chkAlpha(testhttp)); // false
+      console.log(Rpj.chkAlphaExtra(testhttp)); // false
 
       var testhttps = "https://hogehoge.com";
       console.log('---------https--------');
       console.log(Rpj.chkUrl(testhttps)); // true
-      console.log(Rpj.chkAlphaExtra(testhttps)); // true
+      console.log(Rpj.chkAlpha(testhttps)); // false
+      console.log(Rpj.chkAlphaExtra(testhttps)); // false
 
     </script>
   </head>
