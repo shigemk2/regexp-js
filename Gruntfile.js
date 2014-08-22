@@ -22,10 +22,15 @@ module.exports = function (grunt) {
         qunit: {
             all: ['test/*.html']
         },
+        blanket: {
+            files: {
+                'src-cov/': ['*.js']
+            }
+        },
         watch: {
             gruntfile: {
                 files: ['Gruntfile.js', '<%= uglify.dist.src %>','test/*'],
-                tasks: ['uglify', 'jshint', 'qunit']
+                tasks: ['uglify', 'jshint', 'qunit', 'blanket']
             }
         }
     });
@@ -35,6 +40,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-blanket');
 
   // Default task
     grunt.registerTask('default', ['watch', 'uglify', 'jshint', 'qunit']);
