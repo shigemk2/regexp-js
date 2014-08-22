@@ -1,6 +1,5 @@
 {
   "name": "regexp-js",
-  "version": "1.0",
   "description": "JavaScript Easier Regexp Library",
   "main": "regexp.js",
   "scripts": {
