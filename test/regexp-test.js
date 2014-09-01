@@ -12,7 +12,7 @@ test("numeric on chkNumeric", function () {
 });
 
 test("numeric on chkNumeric with length", function () {
-  ok(rpj.chkNumeric("1234567890", 9) === true, "1234567890 is valid");
+  ok(rpj.chkNumeric("1234567890", 10) === true, "1234567890 is valid");
 });
 
 test("numeric on chkNumeric with invalid length", function () {
