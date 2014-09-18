@@ -8,7 +8,7 @@ module("test on regexp.js", {
 
 // chkNumeric
 test("numeric on chkNumeric", function () {
-  ok(rpj.chkNumeric("1234567890") === true, "1234567890 is valid");
+  ok(rpj.chkNumeric("1234567890hoge") === true, "1234567890 is valid");
 });
 
 test("numeric on chkNumeric with length", function () {
